@@ -10,7 +10,7 @@ angular.module('inventory')
       $rootScope.activeUser = null;
     }
 
-    $state.go('home');
+    $state.go('inventory');
   });
 
   $scope.logout = function(){
