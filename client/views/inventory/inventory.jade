@@ -1,0 +1,43 @@
+h3 INVENTORY
+
+h4 Add a Room
+.row
+  .col-xs-4
+    form(name='inventoryForm', novalidate)
+      .form-group
+        label(for='roomName') Room Name
+        input.form-control#roomName(type='text', name='roomName', ng-model='roomName')
+      .form-group
+        button.btn.btn-default(type='submit', ng-click='addRoom(roomName)') Add Room
+  .cols-xs-8
+
+h4 Add Items
+#addInventory
+  .row
+    form(name='itemForm', novalidate)
+      .col-xs-2
+        .form-group
+          label(for='roomType') Room
+          select.form-control#roomType(name='roomType', ng-model='item.room')
+            option(ng-repeat='space in spaces', value='space.value') 
+      .col-xs-2
+        .form-group
+          label(for='qty') Qty
+          input.form-control#qty(name='qty', type='number', ng-model='item.qty')
+      .col-xs-2
+        .form-group
+          label(for='itemName') Item
+          input.form-control#itemName(name='itemName', type='text', ng-model='item.name')
+      .col-xs-2
+        .form-group
+          label(for='costPerItem') Cost Per Item
+          input.form-control#costPerItem(name='costPerItem', type='number', ng-model='item.name')  
+      .col-xs-2
+        .form-group
+          label(for='purchaseDate') Purchase Date
+          input.form-control#purchaseDate(name='purchaseDate', type='date', ng-model='item.purchaseDate')
+      .col-xs-2
+        .form-group
+          label(for='addBtn')
+          button#addBtn.btn.btn-success(ng-click='addItem("add",item)') Add
+    
